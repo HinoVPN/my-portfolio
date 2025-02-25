@@ -44,8 +44,15 @@ const Experience = () => {
   >
     <ExperienceItem 
       title="Programmer"
+      company="Hospital Authority"
+      period="Ang 2024 – Present"
+      description="In-house development within a medical technology environment. Design, develop, test, and maintain applications as a full-stack developer. Collaborate with business teams, participate in all SDLC phases, and ensure smooth integration of internal systems through APIs."
+      skills={['Android','iOS', 'Node.js', 'React Native', 'MsSQL', 'VB.NET', 'C#', 'NestJS', 'SOAP']}
+    />
+    <ExperienceItem 
+      title="Programmer"
       company="St. Teresa's Hospital"
-      period="Jul 2023 – Present"
+      period="Jul 2023 – Ang 2024"
       description="In-house development within a medical technology environment. Design, develop, test, and maintain applications as a full-stack developer. Collaborate with business teams, participate in all SDLC phases, and ensure smooth integration of internal systems through APIs."
       skills={['Android','iOS', 'Node.js', 'React Native', 'MsSQL', 'VB.NET', 'C#', 'NestJS', 'SOAP']}
     />
