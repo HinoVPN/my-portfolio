@@ -8,15 +8,33 @@ on:
     branches:
       - master
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      deploy_message:
+        description: '部署訊息（可選）'
+        required: false
+        default: '🚀 手動部署到 GitHub Pages'
+      force_deploy:
+        description: '強制部署（即使沒有變更）'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   build-and-deploy:
-    # 只在推送到 master 或合併到 master 時執行
-    if: github.ref == 'refs/heads/master' || (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master')
+    # 在推送到 master、合併到 master 或手動觸發時執行
+    if: github.ref == 'refs/heads/master' || (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master') || github.event_name == 'workflow_dispatch'
     
     runs-on: ubuntu-latest
     
     steps:
+    - name: 顯示手動部署資訊
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        echo "🎯 手動部署模式"
+        echo "部署訊息: ${{ github.event.inputs.deploy_message }}"
+        echo "強制部署: ${{ github.event.inputs.force_deploy }}"
+    
     - name: Checkout 代碼
       uses: actions/checkout@v4
       with:
@@ -43,4 +61,5 @@ jobs:
         publish_dir: ./build
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: '🚀 自動部署到 GitHub Pages'
+        commit_message: ${{ github.event.inputs.deploy_message || '🚀 自動部署到 GitHub Pages' }}
+        force_orphan: ${{ github.event.inputs.force_deploy == 'true' }}
