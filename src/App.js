@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import About from './components/About';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -79,6 +80,14 @@ function App() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  <Projects />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
                 >
                   <Contact />
                 </motion.div>

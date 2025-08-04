@@ -61,6 +61,7 @@ const Navigation = () => {
           <NavLink href="#about">About Me</NavLink>
           <NavLink href="#education">Education</NavLink>
           <NavLink href="#experience">Experience</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#contact">Contact</NavLink>
           <div className="ml-4">
             <ThemeToggle />
@@ -89,6 +90,7 @@ const Navigation = () => {
               <NavLink href="#about" onClick={() => setMenuOpen(false)}>About Me</NavLink>
               <NavLink href="#education" onClick={() => setMenuOpen(false)}>Education</NavLink>
               <NavLink href="#experience" onClick={() => setMenuOpen(false)}>Experience</NavLink>
+              <NavLink href="#projects" onClick={() => setMenuOpen(false)}>Projects</NavLink>
               <NavLink href="#contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
               <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center">
