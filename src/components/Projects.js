@@ -5,6 +5,12 @@ import Section from './Section';
 
 const projectsData = [
   {
+    title: "Resume Builder",
+    description: "A comprehensive resume builder with multi-language support, rich text editing, and DOCX export functionality. Features step-by-step form wizard, drag-and-drop section ordering, and real-time preview.",
+    demoUrl: "https://github.com/HinoVPN/my-resume-builder",
+    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'TailwindCSS', 'i18next', 'TinyMCE']
+  },
+  {
     title: "Cashflow Calculator",
     description: "A practical cashflow calculation and management tool that helps users track and analyze personal financial status.",
     demoUrl: "https://hinovpn.github.io/cashflow-calculator/",
